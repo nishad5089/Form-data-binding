@@ -1,0 +1,31 @@
+ <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="email" name="name" class="form-control" [(ngModel)]="carModel.name" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Motor</label>
+        <select class="form-control" name="motor" [(ngModel)]="carModel.motor" required>
+          <option value="-1" disabled [selected]="true">--Select Motor--</option>
+          <option *ngFor="let motor of motors" [value]="motor">{{motor}}</option>
+        </select>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="hasSunroof" [(ngModel)]="carModel.hasSunroof" [value]="false" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Has sunroof
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="hasSunroof" [(ngModel)]="carModel.hasSunroof" [value]="true" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          No sunroof
+        </label>
+      </div>
+      <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <pre>{{ getCurrentModel() }}</pre>
+    </div>
+    <router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+<div class="container">
+   <h2>Reactive Form with two binding</h2>
+<form [formGroup]="form">
+    <label for="exampleInputEmail1" class="form-label">First Name</label>
+    <input name="first" class="form-control" formControlName="first" [(ngModel)]="example.first"/>
+    <br>
+    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+    <input name="last" class="form-control" formControlName="last" [(ngModel)]="example.last"/>
+  </form>
+<h4>Example values: {{example | json}}</h4>
+
+</div>
